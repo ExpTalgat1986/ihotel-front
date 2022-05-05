@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  min-height: 56px;
+
+  & .lang-select {
+    width: 40px;
+    color: #5d4539;
+  }
+
+  & .app-title {
+    color: $dark;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  &-notification {
+    color: $secondary-dark;
+  }
+}
