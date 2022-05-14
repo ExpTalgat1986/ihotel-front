@@ -219,6 +219,10 @@ export default defineComponent({
           guest_number: data,
           message: messageToConcierge.value,
         });
+        await Api.sendFmcPush({
+          type: "MESSAGE",
+          message: "Новое сообщение от клиента",
+        });
         messageToConcierge.value = "";
         $q.notify({
           message: msgSentSuccessfullyText.value,
@@ -242,6 +246,10 @@ export default defineComponent({
         await Api.sendMessage({
           guest_number: data,
           message: "[SYSTEM]: Заказ такси",
+        });
+        await Api.sendFmcPush({
+          type: "MESSAGE",
+          message: "Клиент заказал такси, обработайте заявку",
         });
         $q.notify({
           message: successfullyOrderedTaxText.value,

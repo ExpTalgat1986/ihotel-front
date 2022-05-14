@@ -13,4 +13,5 @@ export const Api = {
   getAdditionalServiceCategories: () => api.get("ad-service-categories"),
   sendMessage: (data) => api.post("messages", data),
   getNotifications: () => api.get("notifications"),
+  sendFmcPush: (data) => api.post("fcm", data),
 };

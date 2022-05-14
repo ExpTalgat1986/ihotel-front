@@ -138,6 +138,10 @@ export default defineComponent({
       try {
         isLoading.value = true;
         await Api.makeOrder(data);
+        await Api.sendFmcPush({
+          type: 'ORDER',
+          message: 'Клиент сделал новый заказ, обработайте пожалуйста'
+        })
         q.notify({
           message: successfullyOrderText.value,
           position: "top-right",
