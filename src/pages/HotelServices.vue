@@ -194,7 +194,7 @@ export default defineComponent({
 
     const selectedCategoryFoods = computed(() => {
       return foods.value.filter(
-        (el) => el.category_id === selectedCategory.value.id
+        (el) => el.category_id === selectedCategory.value.id && el.is_available
       );
     });
 
